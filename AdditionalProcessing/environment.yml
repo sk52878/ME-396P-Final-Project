@@ -7,6 +7,7 @@ dependencies:
   - opensim=4.5=py311np123
   - pip
   - pip:
+      - streamlit
       - scipy==1.10.0
       - pandas
       - matplotlib
