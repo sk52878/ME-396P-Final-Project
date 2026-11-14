@@ -33,9 +33,9 @@ def FullProcess(sessionID, trialName):
     
     # GRF vector norm
     def force_magnitude(side):
-        return np.sqrt(grfs[f'ground_force_{side}_vx'] ** 2 +
-                       grfs[f'ground_force_{side}_vy'] ** 2 +
-                       grfs[f'ground_force_{side}_vz'] ** 2)
+        return np.sqrt(ground_reaction_forces[f'ground_force_{side}_vx'] ** 2 +
+                       ground_reaction_forces[f'ground_force_{side}_vy'] ** 2 +
+                       ground_reaction_forces[f'ground_force_{side}_vz'] ** 2)
     
     # Muscle group dataframe creation
     def group_df(abbrevs):
@@ -128,7 +128,7 @@ def FullProcess(sessionID, trialName):
         'Units': scalars_r_df['units'],
     }).round(2)
     gait_metrics_df.index.name = 'Metric'
-    gait_metrics_df.index = gait_metrics_df.index.str.replace('_', ' ').str.upper()
+    gait_metrics_df.index = gait_metrics_df.index.str.replace('_', ' ').str.title()
     
     # %% Dynamics
     baseDir = os.getcwd()
@@ -206,14 +206,14 @@ def FullProcess(sessionID, trialName):
     moments_df.index.name = 'Moment'
     
     # %% GRFs
-    grfs = read_mot(f"{sessionID}/OpenSimData/Dynamics/{trialName}/GRF_resultant_{trialName}_0.mot")
+    ground_reaction_forces = read_mot(f"{sessionID}/OpenSimData/Dynamics/{trialName}/GRF_resultant_{trialName}_0.mot")
     
-    grf_df = pd.DataFrame(
+    ground_reaction_forces_df = pd.DataFrame(
         {'Right Foot (N)': [force_magnitude('right').max()],
          'Left Foot (N)':  [force_magnitude('left').max()]},
         index=['Peak Ground Reaction Force']
     ).round(2)
-    grf_df.index.name = 'Force'
+    ground_reaction_forces_df.index.name = 'Force'
     
     # %% Muscles
     muscles = read_mot(f"{sessionID}/OpenSimData/Dynamics/{trialName}/forces_{trialName}_0.mot")
@@ -261,4 +261,4 @@ def FullProcess(sessionID, trialName):
     plantarflexors_df = group_df(['gaslat', 'gasmed', 'soleus'])
     dorsiflexors_df   = group_df(['tibant'])
     
-    return gait_metrics_df, moments_df, grf_df, hip_extensors_df, hip_abductors_df, hip_flexors_df, hamstrings_df, quadriceps_df, plantarflexors_df, dorsiflexors_df
+    return gait_metrics_df, moments_df, ground_reaction_forces_df, hip_extensors_df, hip_abductors_df, hip_flexors_df, hamstrings_df, quadriceps_df, plantarflexors_df, dorsiflexors_df
