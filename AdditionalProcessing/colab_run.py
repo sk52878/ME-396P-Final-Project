@@ -43,7 +43,17 @@ titles = ["Gait_metrics", "Joint_moments", "Ground_reaction_forces",
           "Hip_extensors", "Hip_abductors", "Hip_flexors", "Hamstrings",
           "Quadriceps", "Plantarflexors", "Dorsiflexors"]
 
+groups = ['Additional Gait Metrics', 'Joint Moments', 'Ground Reaction Forces',
+                 'Loading Response (Hip Extensors)', 'Stance Stability (Hip Abductors)', 
+                 'Swing Initiation / Swing (Hip Flexors)', 'Terminal Swing / Early Stance (Hamstrings)',
+                 'Weight Acceptance (Quadriceps)', 'Push-Off (Plantarflexors)',
+                 'Initial Contact / Clearance (Dorsiflexors)']
+
 os.makedirs("results", exist_ok=True)
-for title, df in zip(titles, outputs):
-    df.to_csv(os.path.join("results", title + ".csv"))
+for i, (title, desc, df) in enumerate(zip(titles, groups, outputs), start=1):
+    path = os.path.join("results", f"{i:02d}_{title}.csv")
+    with open(path, "w", newline="") as sheet:
+        sheet.write(desc + "\n")
+        sheet.write("\n")
+        df.to_csv(sheet)
 print("DONE")

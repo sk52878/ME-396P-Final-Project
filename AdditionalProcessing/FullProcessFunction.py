@@ -59,9 +59,6 @@ def FullProcess(sessionID, trialName):
     filter_frequency = 6
     
     # %% Gait Kinematics Analysis
-    # Get trial id from name.
-    # trial_id = get_trial_id(sessionID,trial_name)    
-    
     # Set session path.
     sessionDir = os.path.join(baseDir, f"OpenCapData_{sessionID}")
     
@@ -231,16 +228,6 @@ def FullProcess(sessionID, trialName):
         'psoas': 'psoas', 'recfem': 'rectus femoris',
         'vasint': 'vastus intermedius', 'vaslat': 'vastus lateralis', 'vasmed': 'vastus medialis',
     }
-    
-    # muscle_groups = {
-    #     'Loading Response (Hip Flexors)':        ['glmax1', 'glmax2', 'glmax3'],
-    #     'Stance Stability (Hip Abductors)':        ['glmed1', 'glmed2', 'glmed3', 'glmin1', 'glmin2', 'glmin3'],
-    #     'Swing Initiation / Swing (Hip Flexors)':         ['psoas'],
-    #     'Terminal Swing / Early Stance (Hamstrings)': ['bflh', 'bfsh', 'semimem'],
-    #     'Weight Acceptance (Quadriceps)':          ['recfem', 'vasint', 'vaslat', 'vasmed'],
-    #     'Push-Off (Plantarflexors)':               ['gaslat', 'gasmed', 'soleus'],
-    #     'Initial Contact / Clearance (Dorsiflexors)': ['tibant'],
-    # }
     
     # Split muscle names into muscle + side
     side = maxmuscles.index.str[-1]       # 'r' or 'l'
