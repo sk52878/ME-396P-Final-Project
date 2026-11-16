@@ -15,6 +15,7 @@ Optional (to output the results as .csv files):
 For results as pandas dataframes:
 - Add unzipped OpenCap folder to same directory as all OpenCap-Processing files and make this your current working directory
 - Call the FullProcess function from FullProcessFunction.py with the name of the desired session ID and name of the desired trial
+
 For results as csv files:
 - Download the optional files in addition to the other files
 - Run FullGaitResults.ipynb and upload zipped folder when prompted
