@@ -5,7 +5,7 @@ Gait Efficiency Scoring Site: https://testwebsitepy-hu95pzfrd4yxnpmexwz4ff.strea
 
 Full Gait Results Site: https://colab.research.google.com/drive/1l3eM42wMI94p1JGSOB8Yi6zufa7K-q9k
 
-## To run all Open Cap processing code locally:
+## To run all Full Gait Results processing code locally:
 Visit https://github.com/opencap-org/opencap-processing and follow the README
 
 From this repo>AdditionalProcessing, download and place in the same directory as your cloned OpenCap-Processing files
