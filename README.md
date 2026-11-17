@@ -1,5 +1,7 @@
 # ME-396P-Final-Project
 Repository for Engineering Application for Engineers Final Project
+Gait Efficiency Scoring Site: https://testwebsitepy-hu95pzfrd4yxnpmexwz4ff.streamlit.app/
+Full Gait Results Site: https://colab.research.google.com/drive/1l3eM42wMI94p1JGSOB8Yi6zufa7K-q9k
 
 ## To run all Open Cap processing code locally:
 Visit https://github.com/opencap-org/opencap-processing and follow the README
