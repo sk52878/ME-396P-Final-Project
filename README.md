@@ -15,7 +15,18 @@ Visit https://github.com/opencap-org/opencap-processing and follow the "Install 
 From this repo>AdditionalProcessing, download and place in the same directory as your cloned OpenCap-Processing files:
 - gait_analysis_edited.py
 - FullProcessFunction.py
-- settingsOpenSimAD.py from  and replace the file with the same name in UtilsDynamicSimulations > OpenSimAD from your OpenCap-Processing git clone (this does not need to be done, but lowers the convergence tolerance and mesh density of the optimizer to make convergence quicker and match the settings of the Google Colab code)
 - colab_run.py
 
+From this repo>AdditionalProcessing, download and replace the same-named files in the same directory as your cloned OpenCap-Processing files:
+- utils.py
+- utilsProcessing.py
+
+From this repo>AdditionalProcessing>UtilsDynamicSimulations>OpenSimAD, download these files and replace the current files with the same name under the same folder path
+- utilsOpenSimAD.py
+- settingsOpenSimAD.py (this does not need to be done, but lowers the convergence tolerance and mesh density of the optimizer to make convergence quicker and match the settings of the Google Colab code)
+
 In colab_run.py, change the zip_path and trial variables to the exact path of your desired zip file and the name of the trial you would like to process
+
+Notes:
+- Before running the local code more than once, all files in opencap-processing>UtilsDynamicSimulations>OpenSimAD>build-ExpressionGraphF must be deleted
+- If processing multiple trials (or the same trial multiple times) from the same session, folders "OpenCapData_{SessionID}" and "{SessionID}" must be renamed, deleted, or moved out of your current working directory.
