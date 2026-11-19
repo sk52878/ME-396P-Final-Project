@@ -13,6 +13,8 @@ os.environ.setdefault("MPLBACKEND", "Agg")
 AppDir = os.path.dirname(os.path.abspath(__file__))
 
 zip_path, trial = sys.argv[1], sys.argv[2]
+## TODO: Uncomment and use this line of code (and comment out the line above) if running locally
+# zip_path, trial = 'Your/path/here.zip', 'trialName'
 
 # Extract zip folder's contents into a temporary folder
 tfolder = tempfile.mkdtemp(dir=AppDir)
@@ -49,11 +51,10 @@ groups = ['Additional Gait Metrics', 'Joint Moments', 'Ground Reaction Forces',
                  'Weight Acceptance (Quadriceps)', 'Push-Off (Plantarflexors)',
                  'Initial Contact / Clearance (Dorsiflexors)']
 
-os.makedirs("results", exist_ok=True)
-for i, (title, desc, df) in enumerate(zip(titles, groups, outputs), start=1):
-    path = os.path.join("results", f"{i:02d}_{title}.csv")
-    with open(path, "w", newline="") as sheet:
+path = "results.csv"
+with open(path, "w", newline="") as sheet:
+    for desc, df in zip(groups, outputs):
         sheet.write(desc + "\n")
+        df.to_csv(sheet, lineterminator = "\n")
         sheet.write("\n")
-        df.to_csv(sheet)
 print("DONE")
