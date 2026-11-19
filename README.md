@@ -30,3 +30,4 @@ In colab_run.py, change the zip_path and trial variables to the exact path of yo
 Notes:
 - Before running the local code more than once, all files in opencap-processing>UtilsDynamicSimulations>OpenSimAD>build-ExpressionGraphF must be deleted
 - If processing multiple trials (or the same trial multiple times) from the same session, folders "OpenCapData_{SessionID}" and "{SessionID}" must be renamed, deleted, or moved out of your current working directory.
+- The processing function is built to quit if it cannot converge after 5000 iterations. If this occurs, try again with a different trial from the same session.
