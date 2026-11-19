@@ -1,6 +1,8 @@
 # ME-396P-Final-Project
 Repository for Engineering Application for Engineers Final Project
 
+Presentation: https://docs.google.com/presentation/d/1j-i9rDVvU3zblhlkTz57k1LNPg1J9USr/edit?usp=sharing&ouid=116060017966637902852&rtpof=true&sd=true
+
 Gait Efficiency Scoring Site: https://testwebsitepy-hu95pzfrd4yxnpmexwz4ff.streamlit.app/
 
 Full Gait Results Site: https://colab.research.google.com/drive/1l3eM42wMI94p1JGSOB8Yi6zufa7K-q9k
