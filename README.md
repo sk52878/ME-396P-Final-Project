@@ -1,6 +1,8 @@
 # ME-396P-Final-Project
 Repository for Engineering Application for Engineers Final Project
 
+Use OpenCapData_99d7534a-b172-4908-9d41-2fd47289be97_cff85028-d71b-4ce6-acbb-0960630eb719.zip in the root directory for testing.
+
 Presentation: https://docs.google.com/presentation/d/1j-i9rDVvU3zblhlkTz57k1LNPg1J9USr/edit?usp=sharing&ouid=116060017966637902852&rtpof=true&sd=true
 
 Gait Efficiency Scoring Site: https://testwebsitepy-hu95pzfrd4yxnpmexwz4ff.streamlit.app/
